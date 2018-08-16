@@ -4,28 +4,57 @@
 ### 리액트는 컴포넌트로 구성되어있다. 
 ### JSX란? 리액트 컴포넌트를 자바스크립트로 만든다
 
-### App.js
 ```javascript
+App.js
+
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Movie from './Movie';
 
 class App extends Component{
-    reder(){
-        return (
-            <div className="App">
-             <div className="App-hearder">
-                  <img src={logo} className="App-logo" alt="logo" />
-                  <h2> **원하는 문구를 작성해보세요** </h2>
-                </div>
-                <p className="App-intro">
-                  To get stated, edit <code>src/App.js</code>and svae to reload.
-                </p>
-            </div>
-        );
-    }
+  render(){
+    return(
+        <div className="App">
+          <Movie />
+          <Movie />
+          <Movie />
+          <Movie />
+        </div>
+    );
+  }
 }
 
 export default App;
 
 ```
+
+```javascript
+Movie.js
+
+import React, {Component} from 'react';
+import './Movie.css';
+
+class Movie extends Component{
+    render(){
+        return(
+            <div>
+                <MoviePoster />
+                <h1>hello this is a movie</h1>
+            </div>
+        )
+    }
+}
+
+class MoviePoster extends Component{
+    render(){
+        return(
+            <img src = "https://steamcdn-a.akamaihd.net/steam/apps/416560/header.jpg?t=1504213621" />    
+        )
+    }
+}
+
+export default Movie
+
+
+```
+
